@@ -1,26 +1,137 @@
-@import "tailwindcss";
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Base styles */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  --card-bg: #ffffff;
+  --card-text: #171717;
+  --border-color: #e5e7eb;
+  --gradient-start: 255, 255, 255;
+  --gradient-end: 255, 255, 255;
+  
+  /* Font variables */
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-roboto-mono: 'Roboto Mono', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --card-bg: #111111;
+  --card-text: #e5e7eb;
+  --border-color: #374151;
+  --gradient-start: 255, 255, 255;
+  --gradient-end: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom font classes */
+.font-inter {
+  font-family: var(--font-inter);
 }
 
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+
+.font-roboto-mono {
+  font-family: var(--font-roboto-mono);
+}
+
+/* Gradient classes */
+/* Gradient text classes */
+.gradient-text {
+  background: linear-gradient(135deg, rgba(var(--gradient-start)), rgba(var(--gradient-end)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradient-hover {
+  background: linear-gradient(135deg, rgba(var(--gradient-start)), rgba(var(--gradient-end)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradient-hover:hover {
+  background: linear-gradient(135deg, rgba(var(--gradient-end)), rgba(var(--gradient-start)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Body styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  color: rgb(var(--foreground-rgb));
+  font-family: var(--font-inter);
+  margin: 0;
+  padding: 0;
 }
+
+body.dark {
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  color: rgb(var(--foreground-rgb));
+}
+
+  .dark {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --card-bg: #111111;
+    --card-text: #e5e7eb;
+    --border-color: #374151;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+    color: rgb(var(--foreground-rgb));
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Add gradient hover effects to buttons and cards */
+  .gradient-hover {
+    background: linear-gradient(
+      to right,
+      rgb(var(--gradient-start)),
+      rgb(var(--gradient-end))
+    );
+  }
+
+  .gradient-hover:hover {
+    background: linear-gradient(
+      to right,
+      rgb(var(--gradient-start)) / 0.9,
+      rgb(var(--gradient-end)) / 0.9
+    );
+  }
+
+  /* Add gradient text effect */
+  .gradient-text {
+    background: linear-gradient(
+      to right,
+      rgb(var(--gradient-start)),
+      rgb(var(--gradient-end))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
