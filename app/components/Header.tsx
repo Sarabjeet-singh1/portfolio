@@ -1,14 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const menuItems = [
     { name: 'Home', href: '#' },
     { name: 'About', href: '#about' },
@@ -27,70 +25,38 @@ const Header = () => {
             </span>
           </Link>
 
+          {/* Desktop navbar */}
           <nav className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-600 hover:text-blue-600 transition-all duration-200 font-medium dark:text-gray-300 dark:hover:text-blue-400"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <ThemeToggle />
-          </nav>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              {isOpen ? (
-                <XMarkIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-              ) : (
-                <Bars3Icon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-              )}
-            </button>
-          </div>
-
-          <div className="md:hidden flex items-center space-x-4">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              {isOpen ? (
-                <XMarkIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-              ) : (
-                <Bars3Icon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden"
-          >
-            <div className="px-4 py-2">
+            <div className="flex items-center space-x-4">
               {menuItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
-                  onClick={() => setIsOpen(false)}
+                  className="text-gray-600 hover:text-blue-600 transition-all duration-200 font-medium dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <ThemeToggle />
+            </div>
+          </nav>
+
+          {/* Mobile navbar */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <div className="flex items-center space-x-1">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-all duration-200 font-medium dark:text-gray-300 dark:hover:text-blue-400 px-2 py-1 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-          </motion.div>
-        )}
+          </div>
+        </div>
       </div>
     </header>
   );

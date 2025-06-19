@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 import { useTheme } from 'next-themes';
 
-const ThemeToggle = () => {
+interface ThemeToggleProps {
+  className?: string;
+}
+
+const ThemeToggle = ({ className = '' }: ThemeToggleProps) => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -25,7 +29,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="p-2 bg-white dark:bg-gray-900 rounded-full"
+      className={`p-2 bg-white dark:bg-gray-900 rounded-full ${className}`}
     >
       {isDark ? (
         <SunIcon className="w-6 h-6 text-yellow-400" />

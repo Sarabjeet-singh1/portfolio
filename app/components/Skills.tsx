@@ -60,10 +60,12 @@ const Skills = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-700"
+              className="p-6 rounded-xl shadow-lg dark:shadow-gray-700"
             >
-              <div className="flex items-center gap-4 p-6 rounded-lg shadow dark:shadow-gray-700 hover:shadow-lg dark:hover:shadow-gray-700 transition-all duration-300">
-                {skill.icon}
+              <div className="flex items-center gap-4 p-6 rounded-xl shadow-lg dark:shadow-gray-700 transition-all duration-300 hover:scale-105">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full shadow-lg">
+                  {skill.icon}
+                </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
                   <p className="mt-1 text-gray-600 dark:text-gray-400">Expertise in building modern web applications</p>
