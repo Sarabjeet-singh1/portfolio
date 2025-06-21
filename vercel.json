@@ -1,20 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "next.config.js",
-        "use": "@vercel/next"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/$1"
-      }
-    ],
-    "env": {
-      "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY": "@NEXT_PUBLIC_EMAILJS_PUBLIC_KEY",
-      "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID": "@NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",
-      "NEXT_PUBLIC_EMAILJS_SERVICE_ID": "@NEXT_PUBLIC_EMAILJS_SERVICE_ID"
+  "version": 2,
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
