@@ -26,7 +26,7 @@ export default function Home() {
               Hi, I'm Sarabjeet Singh
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              Full Stack Developer | Web Developer | Tech Enthusiast
+              Mern Stack Developer | Web3 Developer | Tech Enthusiast
             </p>
             <div className="flex gap-4 justify-center">
               <Link
@@ -38,14 +38,14 @@ export default function Home() {
 
               <Link
                 href="#projects"
-                className="inline-flex items-center px-8 py-3 rounded-full bg-white/10 dark:bg-gray-800 text-white font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-8 py-3 rounded-full bg-blue-600/10 dark:bg-gray-800 text-blue-600 dark:text-white font-semibold hover:bg-blue-700/10 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
               >
                 View Projects
               </Link>
             </div>
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-200 dark:from-gray-700 to-transparent"></div>
-  
+    
         </section>
 
         {/* About Section */}
@@ -73,10 +73,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-transparent py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-sm">&copy; {new Date().getFullYear()} Sarabjeet Singh. All rights reserved.</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">&copy; {new Date().getFullYear()} Sarabjeet Singh. All rights reserved.</p>
             <div className="flex gap-4">
               <Link href="https://github.com/Sarabjeet-singh1" target="_blank" className="hover:text-blue-400">
                 <span className="sr-only">GitHub</span>

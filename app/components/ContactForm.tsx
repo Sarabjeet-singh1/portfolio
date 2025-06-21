@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import emailjs from '@emailjs/browser';
+import { emailjsConfig } from '../env';
 
 interface FormData {
   name: string;
@@ -57,8 +58,8 @@ const ContactForm = () => {
 
     try {
       await emailjs.send(
-        'service_3t9gqwt',
-        'template_x4pbj2o',
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
         {
           name: formData.name,
           email: formData.email,
@@ -70,7 +71,7 @@ const ContactForm = () => {
             ${formData.message}
           `,
         },
-        'egGxGLl1UvIRdXlWF'
+        emailjsConfig.publicKey
       );
       setMessageSent(true);
       setFormData({ name: '', email: '', message: '' });

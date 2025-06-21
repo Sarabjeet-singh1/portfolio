@@ -56,13 +56,13 @@ const Projects = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-                  <p className="text-gray-100">{project.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-100">{project.description}</p>
                   <div className="flex space-x-2 mt-4">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-white/20 text-white rounded-full text-sm"
+                        className="px-3 py-1 bg-gray-900/20 dark:bg-white/20 text-gray-900 dark:text-white rounded-full text-sm"
                       >
                         {tech}
                       </span>
