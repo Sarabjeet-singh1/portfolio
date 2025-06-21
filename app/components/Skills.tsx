@@ -67,8 +67,8 @@ const Skills = () => {
                   {skill.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
-                  <p className="mt-1 text-gray-600 dark:text-gray-400">Expertise in building modern web applications</p>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{skill.name}</h3>
+                  <p className="mt-1 text-gray-700 dark:text-gray-400">Expertise in building modern web applications</p>
                 </div>
               </div>
             </motion.div>
