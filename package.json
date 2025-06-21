@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
     "postinstall": "npm run build"
   },
   "dependencies": {
